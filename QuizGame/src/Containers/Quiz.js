@@ -3,11 +3,17 @@ import Options from "../Components/Options";
 
 const Quiz = ({ data }) => {
   const [index, setIndex] = useState(0);
+  const [chosenOption, setChosenOption] = useState();
+
+  let correctAnswer = data[index].answer;
+
+  const handleClick = (el) => {
+    setChosenOption(el);
+  };
 
   const goToNextQuestion = () => {
     if (index < 10) {
       setIndex(index + 1);
-      console.log(index);
     }
   };
 
@@ -18,7 +24,13 @@ const Quiz = ({ data }) => {
         {data[index].options.map((option) => {
           return (
             <div key={option}>
-              <Options value={option} />
+              <Options
+                element={option}
+                chosenOption={chosenOption}
+                correctAnswer={correctAnswer}
+                value={option}
+                handleClick={() => handleClick(option)}
+              />
             </div>
           );
         })}
