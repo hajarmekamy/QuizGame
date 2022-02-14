@@ -1,24 +1,28 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
+import { StateContext } from "../Context/Providers/State";
 
-const Options = ({ countdown, setCountDown, setTimeExpired }) => {
+const Options = () => {
+  const { state, actions } = useContext(StateContext);
+
   useEffect(() => {
     let interval;
-    if (countdown > 0) {
+    if (state.timer > 0) {
       interval = setInterval(() => {
-        setCountDown((prev) => prev - 1);
+        actions.time.setTimer(state.timer - 1);
       }, 1000);
     }
-    if (countdown === 0) {
+    if (state.timer === 0) {
       clearInterval(interval);
-      setTimeExpired(true);
+      actions.time.setTimeExpired(true);
       console.log("time expired");
     }
     return () => clearInterval(interval);
     // eslint-disable-next-line
-  }, [countdown]);
+  }, [state.timer]);
   return (
     <>
-      <h4>{countdown} </h4>
+      halooo
+      <h4>time {state.timer} </h4>
     </>
   );
 };
