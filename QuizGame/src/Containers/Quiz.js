@@ -11,10 +11,15 @@ const Quiz = ({ data }) => {
     setChosenOption(el);
   };
 
+  const resetForNextQuestion = () => {
+    setChosenOption(undefined);
+  };
+
   const goToNextQuestion = () => {
     if (index < 10) {
       setIndex(index + 1);
     }
+    resetForNextQuestion();
   };
 
   return (
