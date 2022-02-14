@@ -17,10 +17,12 @@ const Options = ({
     }
   };
 
+
   return (
     <>
       <div>
         <button
+          disabled={chosenOption !== undefined}
           className={chosenOption && changeColor(element)}
           onClick={handleClick}
         >
