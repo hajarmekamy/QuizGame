@@ -6,6 +6,7 @@ const Options = ({
   element,
   correctAnswer,
   chosenOption,
+  timeExpired,
 }) => {
   const changeColor = (el) => {
     if (el === chosenOption && el === correctAnswer) {
@@ -17,12 +18,11 @@ const Options = ({
     }
   };
 
-
   return (
     <>
       <div>
         <button
-          disabled={chosenOption !== undefined}
+          disabled={chosenOption !== undefined || timeExpired}
           className={chosenOption && changeColor(element)}
           onClick={handleClick}
         >

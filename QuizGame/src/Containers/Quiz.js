@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import Options from "../Components/Options";
+import CountDown from "../Components/CountDown";
 
 const Quiz = ({ data }) => {
   const [index, setIndex] = useState(0);
   const [chosenOption, setChosenOption] = useState();
+  const [time, setTime] = useState(15);
+  const [timeExpired, setTimeExpired] = useState();
 
   let correctAnswer = data[index].answer;
 
@@ -13,6 +16,7 @@ const Quiz = ({ data }) => {
 
   const resetForNextQuestion = () => {
     setChosenOption(undefined);
+    setTime(15);
   };
 
   const goToNextQuestion = () => {
@@ -24,6 +28,11 @@ const Quiz = ({ data }) => {
 
   return (
     <>
+      <CountDown
+        setTimeExpired={setTimeExpired}
+        countdown={time}
+        setCountDown={setTime}
+      />
       <h3>{data[index].question}</h3>
       <div>
         {data[index].options.map((option) => {
@@ -32,6 +41,7 @@ const Quiz = ({ data }) => {
               <Options
                 element={option}
                 chosenOption={chosenOption}
+                timeExpired={timeExpired}
                 correctAnswer={correctAnswer}
                 value={option}
                 handleClick={() => handleClick(option)}
