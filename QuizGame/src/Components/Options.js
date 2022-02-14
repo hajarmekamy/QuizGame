@@ -1,13 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
+import { StateContext } from "../Context/Providers/State";
 
-const Options = ({
-  value,
-  handleClick,
-  element,
-  correctAnswer,
-  chosenOption,
-  timeExpired,
-}) => {
+const Options = ({ value, handleClick, element, correctAnswer }) => {
+  const { state } = useContext(StateContext);
+
+  let chosenOption = state.chosen_option;
+  let timeExpired = state.time_expired;
+
   const changeColor = (el) => {
     if (el === chosenOption && el === correctAnswer) {
       return "green";

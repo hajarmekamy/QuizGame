@@ -1,4 +1,5 @@
-import { CORRECTS, WRONGS, NO_ANSWERS } from "../Reducers/_types";
+import { CORRECTS, WRONGS, NO_ANSWERS, RESET_SCORE } from "../Reducers/_types";
+import initialState from "../Providers/InitialState";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -11,9 +12,9 @@ const reducer = (state, action) => {
     case NO_ANSWERS:
       return { ...state, no_answers: state.no_answers + 1 };
 
-      case RESETSCORE:
-        return { ...state, no_answers: state.no_answers + 1 };
-  
+    case RESET_SCORE:
+      return initialState;
+
     default:
       return state;
   }
