@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import Options from "../Components/Options";
 import CountDown from "../Components/CountDown";
 import { useNavigate } from "react-router-dom";
@@ -14,6 +14,13 @@ const Quiz = ({ data }) => {
   const [helperTwoIsDisabled, setHelperTwoIsDisabled] = useState(false);
 
   let correctAnswer = data[index].answer;
+
+  // function to show results page after timer is expired on last question
+  useEffect(() => {
+    if (index === 9 && state.time_expired) {
+      navigate("/results");
+    }
+  }, [state.time_expired, index]);
 
   const handleClick = (el) => {
     actions.options.setOptionIsSelected(true);
@@ -76,6 +83,9 @@ const Quiz = ({ data }) => {
           helperTwoActive={helperTwoActive}
           removeTwoOptions={removeTwoOptions}
         />
+        <p style={{ color: "black", fontSize: 22, fontWeight: "bold" }}>
+          Question Nr {index}
+        </p>
       </div>
       <p className="question">{data[index].question}</p>
       <div>
