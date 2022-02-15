@@ -10,8 +10,8 @@ const Quiz = ({ data }) => {
 
   let navigate = useNavigate();
   const [index, setIndex] = useState(0);
-  const [nextQuestionActive, setNextQuestionActive] = useState(false);
   const [helperTwoActive, setHelperTwoActive] = useState(false);
+  const [helperTwoIsDisabled, setHelperTwoIsDisabled] = useState(false);
 
   let correctAnswer = data[index].answer;
 
@@ -30,17 +30,15 @@ const Quiz = ({ data }) => {
     }
   };
 
-  console.log(state);
-
   const resetForNextQuestion = () => {
     actions.options.setChosenOption(undefined);
     actions.options.setOptionIsSelected(false);
     actions.time.setTimer(15);
     actions.time.setTimeExpired(false);
+    setHelperTwoIsDisabled(false);
   };
 
   const goToNextQuestion = () => {
-    setNextQuestionActive(true);
     resetForNextQuestion();
     if (index < 9) {
       setIndex(index + 1);
@@ -52,12 +50,19 @@ const Quiz = ({ data }) => {
     }
   };
 
+  const removeTwoOptions = () => {
+    if (!state.time_expired) {
+      setHelperTwoActive(true);
+      setHelperTwoIsDisabled(true);
+    }
+  };
+
   let optionsRemained = data[index].options.filter(
     (option) => !data[index].optionsToRemove.includes(option)
   );
 
   const optionsToChooseFrom = () => {
-    if (helperTwoActive && !nextQuestionActive) {
+    if (helperTwoIsDisabled) {
       return optionsRemained;
     } else return data[index].options;
   };
@@ -69,7 +74,7 @@ const Quiz = ({ data }) => {
         <CountDown />
         <QuizHelpers
           helperTwoActive={helperTwoActive}
-          setHelperTwoActive={setHelperTwoActive}
+          removeTwoOptions={removeTwoOptions}
         />
       </div>
       <p className="question">{data[index].question}</p>
@@ -88,7 +93,7 @@ const Quiz = ({ data }) => {
         })}
       </div>
       <button className="next" onClick={goToNextQuestion}>
-       NEXT
+        NEXT
       </button>
     </>
   );
