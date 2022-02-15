@@ -16,12 +16,13 @@ const Options = () => {
         The rules are simple, you will be presented with 10 questions and 15
         seconds time slot to answer each. As a bonus to help you out, you are
         given the possibility to use two lifelines to use once during the game.
-        The <b style={{ color: "#1e546b" }}>50/50</b> to remove two options, and
-        the <b style={{ color: "#1e546b" }}>+10</b> to add 10 seconds to your
-        time slot. At the end of the game, you will be presented with the score
-        results. If the results show that you have answered more incorrect
-        questions than correct ones, the game will be over and you will be{" "}
-        <b style={{ color: "darkred" }}>ELIMINATED</b>.
+        The <b style={{ color: "#1e546b", fontSize: 30 }}>50/50</b> to remove
+        two options, and the{" "}
+        <b style={{ color: "#1e546b", fontSize: 30}}>+10</b> to add 10 seconds
+        to your time slot. At the end of the game, you will be presented with
+        the score results. If the results show that your incorrect answers are
+        more than 50% the game will be over and you will be{" "}
+        <b style={{ color: "darkred", fontSize: 25 }}>ELIMINATED</b>.
       </article>
       <b style={{ color: "#494F57" }}>
         {" "}

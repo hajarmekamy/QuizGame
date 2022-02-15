@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  font-family: fantasy;
+  font-family: fantasy, cursive, "sans-serif";
 }
 
 button {
@@ -118,7 +118,7 @@ button {
 
 .title-quiz-start {
   color: #a62c66;
-  font-size: 23px;
+  font-size: 24px;
   font-weight: bold;
   margin-top: 30px;
 }
