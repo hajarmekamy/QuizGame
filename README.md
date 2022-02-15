@@ -1,6 +1,6 @@
 # QUIZ GAME
 
-## TRY THE QUIZ GAME LIVE HERE:  https://quizgame10.netlify.app/
+## TRY THE QUIZ GAME LIVE HERE:  https://quiz-game-2022.netlify.app/
 
 ## Technologies Used
 
