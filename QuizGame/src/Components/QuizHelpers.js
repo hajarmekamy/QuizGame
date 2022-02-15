@@ -15,7 +15,7 @@ const QuizHelpers = ({ helperTwoActive, removeTwoOptions }) => {
   };
 
   return (
-    <div>
+    <div style={{ marginLeft: 66 }}>
       <button
         className="button-50-50"
         disabled={helperTwoActive || timeExpired}

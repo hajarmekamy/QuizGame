@@ -30,7 +30,9 @@ const ScoreResults = () => {
           {state.no_answers}
         </b>
       </p>
-      <button className="restart-button" onClick={restartQuiz}>Restart</button>
+      <button className="restart-button" onClick={restartQuiz}>
+        RESTART
+        </button>
     </div>
   );
 };
