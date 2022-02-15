@@ -18,9 +18,9 @@ git clone https://github.com/hajarmekamy/QuizGame.git
 $ npm install
 
 ### ✔️ Run
-Then go to http://localhost:8000
-
 $ npm start
+
+Then go to http://localhost:8000
 
 ## License
 
