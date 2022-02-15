@@ -11,11 +11,27 @@ const ScoreResults = () => {
   };
 
   return (
-    <>
-      SCORES CORRECTS:{state.corrects} WRONGS:{state.wrongs} NOT ANSWERED:
-      {state.no_answers}
-      <button onClick={restartQuiz}>Restart</button>
-    </>
+    <div className="results-container">
+      <p className="score-text-color">
+        CORRECT ANSWERS:{" "}
+        <b style={{ color: "darkgreen", fontSize: 50, marginLeft: 20 }}>
+          {state.corrects}
+        </b>
+      </p>
+      <p className="score-text-color">
+        WRONGS ANSWERS:{" "}
+        <b style={{ color: "darkred", fontSize: 50, marginLeft: 20 }}>
+          {state.wrongs}
+        </b>
+      </p>
+      <p className="score-text-color">
+        NOT ANSWERED:
+        <b style={{ color: "orange", fontSize: 50, marginLeft: 20 }}>
+          {state.no_answers}
+        </b>
+      </p>
+      <button className="restart-button" onClick={restartQuiz}>Restart</button>
+    </div>
   );
 };
 

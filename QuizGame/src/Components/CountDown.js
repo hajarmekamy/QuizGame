@@ -11,7 +11,7 @@ const Options = () => {
         actions.time.setTimer(state.timer - 1);
       }, 1000);
     }
-    if (state.timer === 0) {
+    if (state.timer === 0 || state.chosen_option !== undefined) {
       clearInterval(interval);
       actions.time.setTimeExpired(true);
       console.log("time expired");
@@ -21,8 +21,7 @@ const Options = () => {
   }, [state.timer]);
   return (
     <>
-      halooo
-      <h4>time {state.timer} </h4>
+      <div className="timer">{state.timer} </div>
     </>
   );
 };

@@ -14,17 +14,19 @@ function App() {
     <State>
       <Router>
         <div className="App">
-          <Routes>
-            <Route path="/" element={<StartGame />} />
-          </Routes>
+          <div className="container">
+            <Routes>
+              <Route path="/" element={<StartGame />} />
+            </Routes>
 
-          <Routes>
-            <Route path="/quiz" element={<Quiz data={dataShuffled} />} />
-          </Routes>
+            <Routes>
+              <Route path="/quiz" element={<Quiz data={dataShuffled} />} />
+            </Routes>
 
-          <Routes>
-            <Route path="/results" element={<ScoreResults />} />
-          </Routes>
+            <Routes>
+              <Route path="/results" element={<ScoreResults />} />
+            </Routes>
+          </div>
         </div>
       </Router>
     </State>

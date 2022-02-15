@@ -1,7 +1,171 @@
+.App {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: fantasy;
+}
+
+button {
+  font-family: fantasy;
+}
+
+.container {
+  border: 8px solid #1e546b;
+  border-radius: 20px;
+  background-image: url(./Assets/squid.png);
+  background-position-y: 30px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 820px;
+  height: 650px;
+}
+
+/* OPTIONS DESIGN */
+.button-option {
+  border-radius: 10px;
+  margin-bottom: 15px;
+  width: 370px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.728);
+  border: 4px solid #1e546b;
+  color: #1e546b;
+  font-size: 24px;
+  font-weight: bold;
+}
+
 .green {
-  background-color: green;
+  background-color: #1e6b3ee1;
+  color: white;
+  border: 3px solid #1e6b3ee1;
 }
 
 .red {
-  background-color: red;
+  background-color: #a62c2cd4;
+  color: white;
+  border: 3px solid #a62c2cd4;
+}
+
+.question {
+  color: #1e546b;
+  font-weight: bold;
+  font-size: 32px;
+  margin-top: 25px;
+}
+
+.next {
+  border-radius: 15px;
+  background-color: black;
+  margin-top: 35px;
+  color: white;
+  font-size: 20px;
+  width: 240px;
+  height: 55px;
+}
+
+/* LIFELINES DESIGN */
+.timer-lifelines-box {
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+  margin-top: 22px;
+}
+
+.button-50-50 {
+  border-radius: 15px;
+  margin-right: 7px;
+  background-color: #1e546b;
+  color: white;
+  width: 65px;
+  height: 55px;
+}
+
+.plus-10-button {
+  border-radius: 15px;
+  background-color: #1e546b;
+  color: white;
+  width: 65px;
+  height: 55px;
+}
+
+.timer {
+  border-radius: 30px;
+  background-color: #a62c66;
+  color: white;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* START GAME PAGE */
+.container-start-game {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.548);
+  border-radius: 15px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 820px;
+  height: 650px;
+}
+
+.title-quiz-start {
+  color: #a62c66;
+  font-size: 23px;
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+.text-quiz-start {
+  font-size: 22px;
+  font-weight: bold;
+  width: 540px;
+  color: black;
+}
+
+.start-game-button {
+  border-radius: 15px;
+  background-color: #a62c66;
+  color: white;
+  font-size: 20px;
+  width: 265px;
+  height: 55px;
+}
+
+/* RESULTS PAGE */
+
+.results-container {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.356);
+  background-position-y: -105px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  border-radius: 10px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 820px;
+  height: 650px;
+}
+
+.score-text-color {
+  color: #1e546b;
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+.restart-button {
+  border-radius: 15px;
+  background-color: #a62c66;
+  color: white;
+  font-size: 20px;
+  width: 265px;
+  height: 55px;
 }

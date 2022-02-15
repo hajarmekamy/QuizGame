@@ -17,12 +17,14 @@ const Options = ({ value, handleClick, element, correctAnswer }) => {
     }
   };
 
+  const styleToChangeColor = chosenOption && changeColor(element);
+
   return (
     <>
       <div>
         <button
           disabled={chosenOption !== undefined || timeExpired}
-          className={chosenOption && changeColor(element)}
+          className={`button-option ${styleToChangeColor}`}
           onClick={handleClick}
         >
           {value}

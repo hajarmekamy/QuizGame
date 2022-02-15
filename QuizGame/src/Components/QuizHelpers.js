@@ -21,17 +21,22 @@ const QuizHelpers = ({ helperTwoActive, setHelperTwoActive }) => {
   };
 
   return (
-    <>
+    <div>
       <button
+        className="button-50-50"
         disabled={helperTwoActive || timeExpired}
         onClick={removeTwoOptions}
       >
-        remove two options
+        50/50
       </button>
-      <button disabled={helperOneActive || timeExpired} onClick={addSeconds}>
-        add 10 seconds
+      <button
+        className="plus-10-button"
+        disabled={helperOneActive || timeExpired}
+        onClick={addSeconds}
+      >
+        +10
       </button>
-    </>
+    </div>
   );
 };
 

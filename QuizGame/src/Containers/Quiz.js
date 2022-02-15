@@ -64,12 +64,15 @@ const Quiz = ({ data }) => {
 
   return (
     <>
-      <CountDown />
-      <QuizHelpers
-        helperTwoActive={helperTwoActive}
-        setHelperTwoActive={setHelperTwoActive}
-      />
-      <h3>{data[index].question}</h3>
+      <div className="timer-lifelines-box">
+        {" "}
+        <CountDown />
+        <QuizHelpers
+          helperTwoActive={helperTwoActive}
+          setHelperTwoActive={setHelperTwoActive}
+        />
+      </div>
+      <p className="question">{data[index].question}</p>
       <div>
         {optionsToChooseFrom().map((option) => {
           return (
@@ -84,7 +87,9 @@ const Quiz = ({ data }) => {
           );
         })}
       </div>
-      <button onClick={goToNextQuestion}>Next question</button>
+      <button className="next" onClick={goToNextQuestion}>
+       NEXT
+      </button>
     </>
   );
 };
