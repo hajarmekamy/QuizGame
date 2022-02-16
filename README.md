@@ -1,6 +1,6 @@
 # QUIZ GAME
 
-## TRY THE QUIZ GAME LIVE HERE:  https://squid-quiz-game.netlify.app/
+## TRY THE QUIZ GAME LIVE HERE:  https://quiz-squid-game.netlify.app/
 
 ## Technologies Used
 
