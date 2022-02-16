@@ -1,7 +1,7 @@
 import React, { useEffect, useContext } from "react";
 import { StateContext } from "../Context/Providers/State";
 
-const Options = () => {
+const CountDown = () => {
   const { state, actions } = useContext(StateContext);
 
   useEffect(() => {
@@ -26,4 +26,4 @@ const Options = () => {
   );
 };
 
-export default Options;
+export default CountDown;

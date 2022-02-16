@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const Options = () => {
+const StartGame = () => {
   let navigate = useNavigate();
 
   const handleStartGame = () => {
@@ -36,4 +36,4 @@ const Options = () => {
   );
 };
 
-export default Options;
+export default StartGame;
