@@ -3,7 +3,7 @@ import { StateContext } from "../Context/Providers/State";
 
 const QuizHelpers = ({ helperTwoActive, removeTwoOptions }) => {
   const { state, actions } = useContext(StateContext);
-  let timeExpired = state.time_time_expired;
+  let timeExpired = state.time_expired;
 
   const [helperOneActive, setHelperOneActive] = useState();
 
