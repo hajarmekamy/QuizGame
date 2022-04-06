@@ -14,14 +14,15 @@ const CountDown = () => {
     if (state.timer === 0 || state.chosen_option !== undefined) {
       clearInterval(interval);
       actions.time.setTimeExpired(true);
-      console.log("time expired");
+      alert("Time expired! Please go to next question.");
+      return false;
     }
     return () => clearInterval(interval);
     // eslint-disable-next-line
   }, [state.timer]);
   return (
     <>
-      <div className="timer">{state.timer} </div>
+      <div className="timer">{state.timer}</div>
     </>
   );
 };

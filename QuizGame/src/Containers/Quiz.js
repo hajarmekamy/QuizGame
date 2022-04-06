@@ -20,6 +20,7 @@ const Quiz = ({ data }) => {
     if (index === 9 && state.time_expired) {
       navigate("/results");
     }
+  // eslint-disable-next-line
   }, [state.time_expired, index]);
 
   const handleClick = (el) => {
